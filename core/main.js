@@ -4,7 +4,7 @@ const path = require('path')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow, displayWindow
+let mainWindow, presentationWindow
 let externalDisplay
 
 function createMainWindow () {
@@ -20,7 +20,7 @@ function createMainWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('main/index.html')
+  mainWindow.loadFile('view/main.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -30,7 +30,7 @@ function createMainWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    if (displayWindow) displayWindow.close()
+    if (presentationWindow) presentationWindow.close()
     mainWindow = null
   })
 }
@@ -46,7 +46,7 @@ app.on('ready', () => {
 
   createMainWindow();
 
-  if (externalDisplay) createDisplayWindow()
+  if (externalDisplay) createPresentationWindow()
 })
 
 // Quit when all windows are closed.
@@ -60,15 +60,15 @@ app.on('activate', function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createMainWindow()
-  if (displayWindow === null) createDisplayWindow()
+  if (presentationWindow === null) createPresentationWindow()
 })
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-function createDisplayWindow () {
+function createPresentationWindow () {
   // Create the browser window.
-  displayWindow = new BrowserWindow({
+  presentationWindow = new BrowserWindow({
     x: externalDisplay.bounds.x, y: externalDisplay.bounds.y,
     width: externalDisplay.bounds.width, height: externalDisplay.bounds.height,
     resizable: false, movable: false,
@@ -76,16 +76,16 @@ function createDisplayWindow () {
   })
 
   // and load the index.html of the app.
-  displayWindow.loadFile('display/index.html')
+  presentationWindow.loadFile('view/presentation.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
-  displayWindow.on('closed', function () {
+  presentationWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    displayWindow = null
+    presentationWindow = null
   })
 }

@@ -2,15 +2,13 @@
   "name": "Hymns",
   "version": "1.0.0",
   "description": "An Electron application",
-  "main": "main.js",
+  "main": "core/main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": "https://github.com/thebittwisters/hymns",
   "keywords": [
-    "sda",
-    "hymnal",
-    "powerpoint"
+    "sda", "hymnal", "powerpoint", "presentation"    
   ],
   "author": "The Bit Twisters",
   "license": "MIT",
