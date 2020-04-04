@@ -8,7 +8,10 @@
   },
   "repository": "https://github.com/thebittwisters/hymns",
   "keywords": [
-    "sda", "hymnal", "powerpoint", "presentation"    
+    "sda",
+    "hymnal",
+    "powerpoint",
+    "presentation"
   ],
   "author": "The Bit Twisters",
   "license": "MIT",
