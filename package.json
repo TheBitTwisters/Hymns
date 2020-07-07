@@ -16,6 +16,6 @@
   "author": "The Bit Twisters",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^7.2.1"
+    "electron": "^7.2.4"
   }
 }
