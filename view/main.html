@@ -2,24 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
+
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="../assets/plugins/bootstrap-4.4.1/css/bootstrap.min.css">
-    <script src="../assets/plugins/jquery-3.4.1.min.js"></script>
-    <script src="../assets/plugins/bootstrap-4.4.1/js/bootstrap.bundle.min.js"></script>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <title>Hello World!</title>
+
+    <!-- Required script -->
+    <script src="./db.js"></script>
+    <script>let $ = require('jquery');</script>
+    <script>require('@popperjs/core');</script>
+    <script>require('bootstrap');</script>
+
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="jumbotron">
     <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
 </body>
