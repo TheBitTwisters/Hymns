@@ -12,7 +12,10 @@ function createMainWindow () {
     // Create the browser window.
     mainWindow = new BrowserWindow({
         width: 360, height: 520,
-        minWidth: 360, minHeight: 520
+        minWidth: 360, minHeight: 520,
+        webPreferences: {
+            nodeIntegration: true
+        }
     });
 
     // and load the index.html of the app.
