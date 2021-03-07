@@ -11,10 +11,6 @@
 
     <!-- Required script -->
     <script src="./db.js"></script>
-    <script>let $ = require('jquery');</script>
-    <script>require('@popperjs/core');</script>
-    <script>require('bootstrap');</script>
-    <script>require('select2');</script>
 
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
@@ -27,6 +23,12 @@
     <option value="WY">Wyoming</option>
 </select>
 
+<script type="text/javascript">
+window.jQuery = $ = require('jquery');
+//require('@popperjs/core');
+require('bootstrap');
+window.select2 = require('select2');
+</script>
 <script type="text/javascript">
 $( function() {
     $('h1').html('this');
