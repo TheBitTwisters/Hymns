@@ -31,21 +31,19 @@ export const createPresentationWindow = async function (externalDisplay) {
     y: externalDisplay.bounds.y,
     width: 1024,
     height: 600,
-    resizable: false,
-    movable: false,
+    show: false,
+    autoHideMenuBar: true,
+    alwaysOnTop: true,
     webPreferences: webPreferences
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
-    // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '/#/present')
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
-    createProtocol('app')
-    // Load the index.html when not in development
     win.loadURL('app://./index.html/#/present')
   }
 
-  win.maximize();
+  win.setFullScreen(true);
   win.show();
 }
