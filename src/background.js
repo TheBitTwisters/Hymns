@@ -4,7 +4,7 @@ import { app, screen, protocol, BrowserWindow } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 
-import { createMainWindow, createPresentationWindow } from './plugins/electron/windows';
+import { createMainWindow, createPresentationWindow } from './electron/MainWindow';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
